@@ -1,0 +1,100 @@
+/* RTL Support Styles */
+
+/* LTR Alignment */
+.ltr-content {
+  direction: ltr;
+  text-align: left;
+}
+
+.ltr-content h1,
+.ltr-content h2,
+.ltr-content h3,
+.ltr-content h4,
+.ltr-content h5,
+.ltr-content h6 {
+  text-align: left;
+}
+
+.ltr-content ul,
+.ltr-content ol {
+  padding-left: 2rem;
+  margin-left: 0;
+}
+
+.ltr-content blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+/* RTL Alignment */
+.rtl-content {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl-content h1,
+.rtl-content h2,
+.rtl-content h3,
+.rtl-content h4,
+.rtl-content h5,
+.rtl-content h6 {
+  text-align: right;
+}
+
+.rtl-content ul,
+.rtl-content ol {
+  padding-right: 2rem;
+  padding-left: 0;
+  margin-right: 0;
+}
+
+.rtl-content blockquote {
+  border-right: 4px solid var(--border-color);
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+  margin-right: 0;
+}
+
+.rtl-content code {
+  direction: ltr;
+}
+
+.rtl-content pre {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Memo container with direction support */
+.memo-container {
+  transition: direction 0.2s ease-in-out;
+}
+
+.memo-container[dir="rtl"] {
+  direction: rtl;
+}
+
+.memo-container[dir="ltr"] {
+  direction: ltr;
+}
+
+/* Direction-aware margins and paddings */
+.memo-container[dir="rtl"] .memo-header {
+  text-align: right;
+}
+
+.memo-container[dir="ltr"] .memo-header {
+  text-align: left;
+}
+
+/* Ensure proper text direction in inputs */
+.memo-container[dir="rtl"] textarea {
+  direction: rtl;
+  text-align: right;
+}
+
+.memo-container[dir="ltr"] textarea {
+  direction: ltr;
+  text-align: left;
+}
