@@ -1,0 +1,4 @@
+-- Add direction field to MemoPayload
+-- Direction: 0 = UNSPECIFIED, 1 = LTR, 2 = RTL
+-- This migration updates the payload JSON to support direction preference
+-- For existing memos, direction defaults to 1 (LTR)

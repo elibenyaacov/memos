@@ -32,6 +32,29 @@ func (v Visibility) String() string {
 	}
 }
 
+// Direction is the type of text direction.
+type Direction int32
+
+const (
+	// DirectionUnspecified is the unspecified direction.
+	DirectionUnspecified Direction = 0
+	// DirectionLTR is the left-to-right direction.
+	DirectionLTR Direction = 1
+	// DirectionRTL is the right-to-left direction.
+	DirectionRTL Direction = 2
+)
+
+func (d Direction) String() string {
+	switch d {
+	case DirectionRTL:
+		return "RTL"
+	case DirectionLTR:
+		return "LTR"
+	default:
+		return "UNSPECIFIED"
+	}
+}
+
 type Memo struct {
 	// ID is the system generated unique identifier for the memo.
 	ID int32
