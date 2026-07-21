@@ -157,6 +157,15 @@ enum Visibility {
   PUBLIC = 3;
 }
 
+// Direction specifies the text direction of a memo.
+enum Direction {
+  DIRECTION_UNSPECIFIED = 0;
+  // LTR: left-to-right text direction (default).
+  LTR = 1;
+  // RTL: right-to-left text direction.
+  RTL = 2;
+}
+
 message Reaction {
   option (google.api.resource) = {
     type: "memos.api.v1/Reaction"
@@ -267,6 +276,9 @@ message Memo {
 
   // Optional. The location of the memo.
   optional Location location = 18 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The text direction of the memo (LTR or RTL).
+  Direction direction = 19 [(google.api.field_behavior) = OPTIONAL];
 
   // Computed properties of a memo.
   message Property {

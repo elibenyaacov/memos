@@ -11,6 +11,9 @@ message MemoPayload {
 
   repeated string tags = 3;
 
+  // The text direction of the memo (LTR or RTL).
+  int32 direction = 4;
+
   // The calculated properties from the memo content.
   message Property {
     bool has_link = 1;
